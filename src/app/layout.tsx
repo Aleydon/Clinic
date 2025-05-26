@@ -17,7 +17,7 @@ const geistMono = localFont({
 export const metadata: Metadata = {
   title: 'Clinic (SaaS)',
   description:
-    'Clinic is a SaaS application built with Next.js, TypeScript, and Tailwind CSS.'
+    'Clinic is a SaaS (Doutor Agenda) application that allows you to manage your medical appointments, patients, and doctors.'
 };
 
 export default function RootLayout({

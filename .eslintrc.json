@@ -31,6 +31,7 @@
     "simple-import-sort/exports": "error",
     "react/react-in-jsx-scope": 0,
     "@typescript-eslint/explicit-function-return-type": 0,
-    "@typescript-eslint/triple-slash-reference": 0
+    "@typescript-eslint/triple-slash-reference": 0,
+    "@typescript-eslint/no-non-null-assertion": 0
   }
 }
