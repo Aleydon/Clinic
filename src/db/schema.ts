@@ -13,10 +13,6 @@ export const userTables = pgTable('users', {
   id: uuid('id').defaultRandom().primaryKey()
 });
 
-export const userTableRelations = relations(userTables, ({ many }) => ({
-  usersToClinic: many(usersToClinicsTable)
-}));
-
 export const usersToClinicsTable = pgTable('users_to_clinics', {
   userId: uuid('user_id')
     .notNull()
@@ -43,6 +39,9 @@ export const usersToClinicsTableRelations = relations(
     })
   })
 );
+export const userTableRelations = relations(userTables, ({ many }) => ({
+  usersToClinic: many(usersToClinicsTable)
+}));
 
 export const clinicsTable = pgTable('clinics', {
   id: uuid('id').defaultRandom().primaryKey(),
