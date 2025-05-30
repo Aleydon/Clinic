@@ -1,3 +1,9 @@
+'use client';
+
+// // import { zodResolver } from '@hookform/resolvers/zod';
+// // import { useForm } from 'react-hook-form';
+// // import { z } from 'zod';
+
 import { Button } from '@/components/ui/button';
 import {
   Card,
@@ -7,16 +13,16 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card';
-// import { Input } from '@/components/ui/input';
-// import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+
+import { SignUpForm } from './components/sign-up-form';
 
 export default function AuthenticationPage() {
   return (
     <div className="flex items-center justify-center h-screen w-screen">
       <div className="flex w-full max-w-sm flex-col gap-6">
         <Tabs defaultValue="login">
-          <TabsList>
+          <TabsList className="w-full">
             <TabsTrigger value="login">Login</TabsTrigger>
             <TabsTrigger value="register">Register</TabsTrigger>
           </TabsList>
@@ -28,23 +34,14 @@ export default function AuthenticationPage() {
               </CardHeader>
               <CardContent className="grid gap-6"></CardContent>
               <CardFooter>
-                <Button>Login</Button>
+                <Button className="w-full" type="submit">
+                  Login
+                </Button>
               </CardFooter>
             </Card>
           </TabsContent>
           <TabsContent value="register">
-            <Card>
-              <CardHeader>
-                <CardTitle>Register</CardTitle>
-                <CardDescription>
-                  Create a new account to get started
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="grid gap-6"></CardContent>
-              <CardFooter>
-                <Button>Create account</Button>
-              </CardFooter>
-            </Card>
+            <SignUpForm />
           </TabsContent>
         </Tabs>
       </div>

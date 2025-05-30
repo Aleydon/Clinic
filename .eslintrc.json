@@ -35,6 +35,7 @@
     "@typescript-eslint/no-non-null-assertion": 0,
     "react/prop-types": 0,
     "@typescript-eslint/strict-boolean-expressions": 0,
-    "@typescript-eslint/consistent-type-assertions": 0
+    "@typescript-eslint/consistent-type-assertions": 0,
+    "@typescript-eslint/no-misused-promises": 0
   }
 }
