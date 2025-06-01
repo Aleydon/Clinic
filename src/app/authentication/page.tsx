@@ -1,9 +1,21 @@
+import { headers } from 'next/headers';
+import { redirect } from 'next/navigation';
+
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { auth } from '@/lib/auth';
 
 import { SignInForm } from './components/sign-in-form';
 import { SignUpForm } from './components/sign-up-form';
 
-export default function AuthenticationPage() {
+export default async function AuthenticationPage() {
+  const session = await auth.api.getSession({
+    headers: await headers()
+  });
+
+  if (session) {
+    return redirect('/dashboard');
+  }
+
   return (
     <div className="flex items-center justify-center h-screen w-screen">
       <div className="flex w-full max-w-sm flex-col gap-6">
