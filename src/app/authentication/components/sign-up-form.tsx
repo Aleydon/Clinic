@@ -4,6 +4,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { Loader2 } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form';
+import { toast } from 'sonner';
 import { z } from 'zod';
 
 import { Button } from '@/components/ui/button';
@@ -64,8 +65,14 @@ export function SignUpForm() {
           // Redirect to the home page or a welcome page after successful registration
           router.push('/dashboard');
         },
-        onError: error => {
-          console.error('Registration error:', error);
+        onError: ctx => {
+          if (ctx.error.code === 'USER_ALREADY_EXISTS') {
+            toast.error(
+              'An account with this email already exists. Please log in instead.'
+            );
+            return;
+          }
+          toast.error(ctx.error.message);
         }
       }
     );
