@@ -6,7 +6,7 @@ import { db } from '@/db';
 import { usersToClinicsTable } from '@/db/schema';
 import { auth } from '@/lib/auth';
 
-import { SignOut } from './components/sign-out';
+import { SignOut } from './_components/sign-out';
 
 export default async function Dashboard() {
   const session = await auth.api.getSession({ headers: await headers() });
@@ -24,7 +24,7 @@ export default async function Dashboard() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+    <div>
       <h3 className="text-4xl text-bold">
         {session?.user?.name
           ? `Welcome back, ${session.user.name}!`
