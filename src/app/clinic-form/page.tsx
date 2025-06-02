@@ -1,7 +1,20 @@
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle
+} from '@/components/ui/dialog';
+
+import { ClinicForm } from './components/form';
 export default function ClinicFormPage() {
   return (
-    <div>
-      <h3>This is the clinic form</h3>
-    </div>
+    <Dialog open>
+      <DialogContent className="sm:max-w-[425px]">
+        <DialogHeader>
+          <DialogTitle>Add clinic</DialogTitle>
+        </DialogHeader>
+        <ClinicForm />
+      </DialogContent>
+    </Dialog>
   );
 }
