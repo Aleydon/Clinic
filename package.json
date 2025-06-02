@@ -6,6 +6,7 @@
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
+    "studio": "drizzle-kit studio",
     "lint": "eslint ./src --fix --ext .tsx,.ts",
     "test": "jest",
     "test:watch": "jest --watchAll",
